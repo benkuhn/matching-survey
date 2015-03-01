@@ -246,23 +246,28 @@ def plot_h5():
 
     # TODO(ben): fix bad layout
     sns.factorplot(MATCHER, 'decrease', 'counterfactual', data=df,
-                   x_order=ORG_NAMES, hue_order=('full', 'partial', 'none'))
+                   x_order=ORG_NAMES, hue_order=('full', 'partial', 'none'),
+                   legend=False)
+    plt.legend(loc='upper left')
     plt.title("Donation reduction by belief about counterfactual")
+
+from matplotlib.pylab import rcParams
+rcParams['figure.figsize'] = 7.5, 4
 
 sns.set_style('whitegrid', {'legend.frameon':True})
 plot_h1()
-plt.savefig('figures/counterfactual.png')
+plt.savefig('figures/counterfactual.svg')
 plot_h2()
-plt.savefig('figures/match.png')
+plt.savefig('figures/match.svg')
 plot_h2_2()
-plt.savefig('figures/match_detail.png')
+plt.savefig('figures/match_detail.svg')
 plot_h3()
-plt.savefig('figures/challenge.png')
+plt.savefig('figures/challenge.svg')
 plot_h3_2()
-plt.savefig('figures/challenge_detail.png')
+plt.savefig('figures/challenge_detail.svg')
 plot_h4()
-plt.savefig('figures/mvsc.png')
+plt.savefig('figures/mvsc.svg')
 plot_h4_2()
-plt.savefig('figures/mvsc_detail.png')
+plt.savefig('figures/mvsc_detail.svg')
 plot_h5()
-plt.savefig('figures/decrease_by_cf.png')
+plt.savefig('figures/decrease_by_cf.svg')
